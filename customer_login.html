@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Log In | Event Link</title>
+  <link rel="stylesheet" href="bootstrap/bootstrap.css"/>
+  <link rel="stylesheet" href="fontawesome/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+      url('img/event1.webp') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: "Poppins", sans-serif;
+      overflow: hidden;
+    }
+
+    /* Back & Sign Up */
+    .back, .signup-btn {
+      position: absolute;
+      top: 40px;
+      z-index: 2;
+    }
+
+    .back {
+      left: 40px;
+    }
+
+    .signup-btn {
+      right: 40px;
+    }
+
+    .back a, .signup-btn a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .back a:hover, .signup-btn a:hover {
+      color: #dcb6a3;
+      transform: scale(1.05);
+    }
+
+    /* Card */
+    .card {
+      background-color: rgba(255, 255, 255, 0.85);
+      border: none;
+      border-radius: 20px;
+      padding: 50px 40px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 420px;
+      width: 100%;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .card-title {
+      font-family: "Dancing Script", cursive;
+      font-size: 45px;
+      color: #dcb6a3;
+      margin-bottom: 5px;
+    }
+
+    .card-subtitle {
+      font-size: 16px;
+      color: #444;
+      margin-bottom: 35px;
+    }
+
+    /* Inputs */
+    .input-wrapper {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .form-icon {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+      color: #999;
+      font-size: 18px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 15px 15px 15px 45px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      background-color: rgba(255, 255, 255, 0.8);
+      transition: 0.3s ease;
+    }
+
+    .form-control:focus {
+      background-color: #fff;
+      border-color: #dcb6a3;
+      box-shadow: 0 0 8px rgba(220,182,163,0.8);
+      outline: none;
+    }
+
+    /* Button */
+    .btn {
+      background-color: #dcb6a3;
+      color: white;
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(220,182,163,0.4);
+    }
+
+    .btn:hover {
+      background-color: #c49b88;
+      transform: scale(1.03);
+      box-shadow: 0 6px 14px rgba(220,182,163,0.6);
+    }
+
+    /* Fade Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 500px) {
+      .card {
+        width: 90%;
+        padding: 35px 25px;
+      }
+
+      .back a, .signup-btn a {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back Button -->
+  <div class="back">
+    <a href="index.html">
+      <i class="fa-solid fa-arrow-left"></i> Back
+    </a>
+  </div>
+
+  <!-- Sign Up Button -->
+  <div class="signup-btn">
+    <a href="signup.html">
+      <i class="fa-solid fa-user-plus"></i> Sign Up
+    </a>
+  </div>
+
+  <!-- Login Card -->
+  <div class="card shadow">
+    <h2 class="card-title">EventLink</h2>
+    <p class="card-subtitle">Log in to continue your journey</p>
+
+    <form id="staffreg" method="POST" action="php/login.php">
+      <div class="input-wrapper">
+        <i class="fa-solid fa-envelope form-icon"></i>
+        <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+      </div>
+
+      <div class="input-wrapper">
+        <i class="fa-solid fa-lock form-icon"></i>
+        <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+      </div>
+
+      <button type="submit" id="submit-btn" class="btn">Log In</button>
+    </form>
+  </div>
+
+  <script src="bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>
